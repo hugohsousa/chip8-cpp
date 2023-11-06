@@ -1,4 +1,7 @@
- Prerequisites
+#vscode
+/.vscode
+
+# Prerequisites
 *.d
 
 # Compiled Object files
@@ -30,3 +33,9 @@
 *.exe
 *.out
 *.app
+
+# Make files
+*.cmake
+CMakeCache.txt
+Makefile
+/CMakeFiles
