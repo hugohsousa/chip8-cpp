@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.5)
+
+PROJECT(chip8)
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+INCLUDE(FindPkgConfig)
+PKG_SEARCH_MODULE(SDL2 REQUIRED sdl2)
+add_executable(${PROJECT_NAME} src/main.cpp src/chip8.cpp src/chip8.h)
+INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${SDL2_LIBRARIES})
