@@ -16,6 +16,6 @@ Chip8::Chip8()
 
 bool Chip8::load_rom(std::string)
 {
-
-    return false;
+    // Temp workaround
+    return true;
 }
