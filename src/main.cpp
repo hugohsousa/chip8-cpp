@@ -30,7 +30,15 @@ int main(int argc, char **argv)
                                           SDL_WINDOWPOS_CENTERED, 1048, 960, NULL);
     if (window == nullptr)
     {
-        std::cerr << "Error in initialising the Window" << SDL_GetError() << std::endl;
+        std::cerr << "Could not create a window" << SDL_GetError() << std::endl;
+        SDL_Quit();
+        exit(1);
+    }
+
+    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    if (renderer == nullptr)
+    {
+        std::cerr << "Could not create renderer" << SDL_GetError() << std::endl;
         SDL_Quit();
         exit(1);
     }
@@ -47,9 +55,16 @@ int main(int argc, char **argv)
                 break;
             }
         }
+
+        // Set the color to cornflower blue and clear
+        SDL_SetRenderDrawColor(renderer, 100, 149, 237, 255);
+        SDL_RenderClear(renderer);
+        // Show the renderer contents
+        SDL_RenderPresent(renderer);
     }
 
     // Cleaning up
+    SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
 
