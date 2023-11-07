@@ -29,8 +29,8 @@ private:
     bool keypad[16];
 
 public:
-    Chip8(); // Constructor
-    bool load_rom(std::string);
+    Chip8();                    // Constructor
+    bool load_rom(std::string); // Load rom to memory
 };
 
 #endif // CHIP8_H
