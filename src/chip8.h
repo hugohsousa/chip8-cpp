@@ -29,8 +29,9 @@ private:
     bool keypad[16];
 
 public:
-    Chip8();                    // Constructor
-    bool load_rom(std::string); // Load rom to memory
+    Chip8();                      // Constructor
+    bool load_rom(std::string);   // Load rom to memory
+    bool getPixelData(int pixel); // Return pixel data
 };
 
 #endif // CHIP8_H
