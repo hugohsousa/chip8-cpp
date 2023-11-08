@@ -32,6 +32,7 @@ public:
     Chip8();                      // Constructor
     bool load_rom(std::string);   // Load rom to memory
     bool getPixelData(int pixel); // Return pixel data
+    void Tick();                  // Do a iterations
 };
 
 #endif // CHIP8_H

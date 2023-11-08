@@ -78,6 +78,7 @@ int main(int argc, char **argv)
 
         // Show the renderer contents
         SDL_RenderPresent(renderer);
+        chip8.Tick();
     }
 
     // Cleaning up
