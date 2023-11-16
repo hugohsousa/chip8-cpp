@@ -34,9 +34,5 @@
 *.out
 *.app
 
-# Make files
-*.cmake
-CMakeCache.txt
-Makefile
-/CMakeFiles
-chip8
+# Build files
+/build

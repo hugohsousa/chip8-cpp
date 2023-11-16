@@ -29,10 +29,11 @@ private:
     bool keypad[16];
 
 public:
-    Chip8();                      // Constructor
-    bool load_rom(std::string);   // Load rom to memory
-    bool getPixelData(int pixel); // Return pixel data
-    void Tick();                  // Do a iterations
+    Chip8();                                                           // Constructor
+    bool load_rom(std::string);                                        // Load rom to memory
+    bool getPixelData(int pixel);                                      // Return pixel data
+    void Tick();                                                       // Do a iterations
+    u_int8_t parseOpCode(uint16_t opcode, uint8_t bits, uint16_t val); // returns x bits from opcode
 };
 
 #endif // CHIP8_H
